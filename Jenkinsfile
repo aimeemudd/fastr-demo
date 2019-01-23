@@ -5,7 +5,7 @@ pipeline {
      stages {
         stage('Test') {
             steps {
-                sh 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli ls'
+                sh 'docker run -dit  --name fastr-cli portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli'
             }
         }
     

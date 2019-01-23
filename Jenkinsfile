@@ -1,8 +1,10 @@
 pipeline {
-     agent 
-        docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli' 
+     agent {
+        docker { 
+        image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli' 
         args '-dit'
                }
+     }
      stages {
         stage('Test') {
             steps {

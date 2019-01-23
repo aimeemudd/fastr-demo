@@ -1,14 +1,14 @@
 pipeline {
-    agent any
-    tools {
-        maven 'maven'
+     agent {
+        docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli' }
     }
- stages {
-        stage('Build') {
+     stages {
+        stage('Test') {
             steps {
-                sh 'mvn clean install org.jacoco:jacoco-maven-plugin:prepare-agent test package'
+                sh 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli ./fastr login --username aimeemudd --password Svvs123!'
             }
-        }    
+        }
+    
 }
 
 }

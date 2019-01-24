@@ -18,8 +18,8 @@ pipeline {
                 docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli' }
             }
          steps {
-                         sh 'ls'
-                          sh 'pwd'
+                         sh './pushfunction'
+                        
 
                      }
         }

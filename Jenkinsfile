@@ -18,7 +18,7 @@ pipeline {
                 docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli' }
             }
          steps {
-                         sh 'export PATH=$PATH:$GOPATH/src/cd-fastr-cli; fastr'
+                         sh './pushfunction.sh'
 
                      }
         }

@@ -18,7 +18,7 @@ pipeline {
                 docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli' }
             }
          steps {
-                         sh './pushfunction.sh'
+                         sh 'cd /var/jenkins_home/workspace/fastr-cli-demo; ./pushfunction.sh'
 
                      }
         }

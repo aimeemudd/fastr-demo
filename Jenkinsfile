@@ -1,18 +1,27 @@
 pipeline {
-    stages {
-        stage('Build') {
-            steps {
-                sh 'mvn clean install org.jacoco:jacoco-maven-plugin:prepare-agent test package'
-            }
-   
-     agent {
-        docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli' }
-    }
-        stage('Test') {
-            steps {
-                sh 'export PATH=$PATH:$GOPATH/src/cd-fastr-cli; fastr'
-
-            }
+     environment {
+            PORTR_TEST_PASSWORD = credentials('PORTR_TESTER_PASSWORD')
+           
         }
+    tools {
+            maven 'maven'
+        }
+    stages {
+     stage('Build'){
+         steps {
+         sh 'mvn clean install org.jacoco:jacoco-maven-plugin:prepare-agent test package'
+        }
+      }
+     stage(deploy) {
+         agent {
+                docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli' }
+            }
+         steps {
+                         sh 'export PATH=$PATH:$GOPATH/src/cd-fastr-cli; fastr'
+
+                     }
+        }
+
     }
-}
+
+    }

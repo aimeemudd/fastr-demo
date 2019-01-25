@@ -20,7 +20,8 @@ pipeline {
          steps {
 
 
-                         sh '/fastr'
+                         sh '/fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
+                         sh '/fastr list'
 
 
 

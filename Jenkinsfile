@@ -20,11 +20,11 @@ pipeline {
             }
          steps {
 
-                         sh 'cd /var/jenkins_home/workspace/fastr-cli-demo/; ./pushfunction.sh'
-                      
-
-
-
+                         sh 'pwd'
+                         sh 'ls'
+                         sh 'cd /go/src/cd-fastr-cli; ./fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
+                         sh 'cd /go/src/cd-fastr-cli; ./fastr create -o test -f /var/jenkins_home/workspace/fastr-cli-demo/meta.json'
+                         sh 'cd /go/src/cd-fastr-cli; ./fastr create -o test -r fastrtest -n blobby -b /var/jenkins_home/workspace/fastr-cli-demo/target/test.jar'
 
                      }
         }

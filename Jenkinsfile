@@ -16,15 +16,15 @@ pipeline {
       }
      stage(deploy) {
          agent {
-                docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli:v3' }
+                docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli:v4' }
             }
          steps {
 
                          sh 'pwd'
                          sh 'ls'
-                         sh 'cd /go/src/cd-fastr-cli; ./fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
-                         sh 'cd /go/src/cd-fastr-cli; ./fastr create -o test -f /var/jenkins_home/workspace/fastr-cli-demo/meta.json'
-                         sh 'cd /go/src/cd-fastr-cli; ./fastr create -o test -r fastrtest -n blobby -b /var/jenkins_home/workspace/fastr-cli-demo/target/test.jar'
+                         sh '/fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
+                         sh '/fastr create -o test -f /var/jenkins_home/workspace/fastr-cli-demo/meta.json'
+                         sh '/fastr create -o test -r fastrtest -n blobby -b /var/jenkins_home/workspace/fastr-cli-demo/target/test.jar'
                          sh 'cat /root/.fastr.json'
 
                      }

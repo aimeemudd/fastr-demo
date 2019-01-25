@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "location": "default",
+    "name": "testfunc",
+    "organization": "test",
+    "resource": "function"
+  },
+  "name": "test",
+  "spec": {
+    "blob": {
+      "name": "blobby"
+    },
+    "config": {
+      "envVars": {
+        "cool": "now",
+        "something": "what",
+        "this": "work man"
+      }
+    },
+    "input": {
+      "http": {}
+    },
+    "replicas": 2,
+    "runtime": {
+      "java": {
+        "entrypoint": "io.test"
+
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ pipeline {
      agent any
      environment {
             PORTR_TEST_PASSWORD = credentials('PORTR_TESTER_PASSWORD')
+
            
         }
     tools {
@@ -22,6 +23,8 @@ pipeline {
 
                          sh 'cd /go/src/cd-fastr-cli; ./fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
                          sh 'cd /go/src/cd-fastr-cli; ./fastr list'
+                         sh 'cd /go/src/cd-fastr-cli; ./fastr create -o test -f meta.json'
+
 
 
 

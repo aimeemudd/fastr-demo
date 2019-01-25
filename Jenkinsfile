@@ -16,7 +16,7 @@ pipeline {
       }
      stage(deploy) {
          agent {
-                docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli:v2' }
+                docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli:v3' }
             }
          steps {
 

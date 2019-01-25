@@ -19,7 +19,7 @@ pipeline {
             }
          steps {
                          sh 'ls'
-                         sh 'pushfunction.sh'
+                         sh './pushfunction.sh'
 
 
                      }

@@ -20,7 +20,7 @@ pipeline {
          steps {
 
 
-                         sh './scripts/pushfunction.sh'
+                         sh '/fastr'
 
 
 

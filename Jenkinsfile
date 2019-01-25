@@ -18,8 +18,10 @@ pipeline {
                 docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli:v1' }
             }
          steps {
+                         sh "chmod +x -R ${env.WORKSPACE}/../${env.JOB_NAME}@script"
+                         sh "${env.WORKSPACE}/../${env.JOB_NAME}@script/pushfunction.sh"
                          sh 'ls'
-                         sh './pushfunction.sh'
+                         sh 'pushfunction.sh'
 
 
                      }

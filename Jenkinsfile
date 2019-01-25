@@ -20,7 +20,7 @@ pipeline {
          steps {
 
 
-                         sh 'ls -al; ./pushfunction.sh'
+                         sh './scripts/pushfunction.sh'
 
 
 

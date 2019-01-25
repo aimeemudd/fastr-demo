@@ -20,9 +20,8 @@ pipeline {
             }
          steps {
 
-                         sh './var/jenkins_home/workspace/fastr-cli-demo/pushfunction.sh'
+                         sh 'cd /var/jenkins_home/workspace/fastr-cli-demo/; ./pushfunction.sh'
                       
-
 
 
 

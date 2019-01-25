@@ -15,13 +15,13 @@ pipeline {
       }
      stage(deploy) {
          agent {
-                docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli:v1' }
+                docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli:v2' }
             }
          steps {
 
 
-                         sh '/fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
-                         sh '/fastr list'
+                         sh 'cd /go/src/cd-fastr-cli; ./fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
+                         sh 'cd /go/src/cd-fastr-cli; ./fastr list'
 
 
 

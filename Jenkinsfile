@@ -20,11 +20,10 @@ pipeline {
             }
          steps {
 
-                         sh 'pwd'
-                         sh 'ls'
+                      
                          sh '/fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
-                         sh '/fastr create -o test -f /var/jenkins_home/workspace/fastr-cli-demo/meta.json'
-                         sh '/fastr create -o test -r fastrtest -n blobby -b /var/jenkins_home/workspace/fastr-cli-demo/target/test.jar'
+                         sh '/fastr create -o test -f ${workspace}/meta.json'
+                         sh '/fastr create -o test -r fastrtest -n blobby -b ${workspace}/target/test.jar'
                          sh 'cat /root/.fastr.json'
 
                      }

@@ -18,14 +18,10 @@ pipeline {
          agent {
                 docker { image 'portr.ctnr.ctl.io/fastr-cli-builder/fastr-cli:v4' }
             }
-         steps {
-
-                      
+         steps {         
                          sh '/fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
                          sh '/fastr create -o test -f ${WORKSPACE}/meta.json'
                          sh '/fastr create -o test -r fastrtest -n blobby -b ${WORKSPACE}/target/test.jar'
-                         sh 'cat /root/.fastr.json'
-
                      }
         }
 

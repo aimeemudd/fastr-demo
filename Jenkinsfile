@@ -22,8 +22,8 @@ pipeline {
 
                       
                          sh '/fastr login --username portr-tester --password $PORTR_TEST_PASSWORD'
-                         sh '/fastr create -o test -f ${workspace}/meta.json'
-                         sh '/fastr create -o test -r fastrtest -n blobby -b ${workspace}/target/test.jar'
+                         sh '/fastr create -o test -f ${WORKSPACE}/meta.json'
+                         sh '/fastr create -o test -r fastrtest -n blobby -b ${WORKSPACE}/target/test.jar'
                          sh 'cat /root/.fastr.json'
 
                      }

@@ -2,8 +2,6 @@ pipeline {
      agent any
      environment {
             PORTR_TEST_PASSWORD = credentials('PORTR_TESTER_PASSWORD')
-
-           
         }
     tools {
             maven 'maven'
